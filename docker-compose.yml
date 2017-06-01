@@ -1,0 +1,18 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+  links:
+    - db
+  volumes:
+    - .:/code
+db:
+  image: "mysql:5"
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./mysql:/etc/mysql/conf.d
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+    MYSQL_DATABASE: RAW
