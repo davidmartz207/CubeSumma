@@ -11,3 +11,4 @@
 */
 
 Route::get('/', function () {return view('matriz');});
+Route::post('/validar', 'matrizController@validar');
