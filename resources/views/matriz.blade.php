@@ -41,8 +41,8 @@
 		for (var i = 1; i <= $('#tareas').val(); i++) {
 		$('#script').append( 'Tarea'+i+'<div class="form-group">'+
 				             '<label>Dimension</label><input type="number" name="dimension['+i+']">'+
-							 '<label>Querys</label><input type="number" name="query['+i+']"><br>'+
-							 '<textarea class="class="form-control" rows="10"" name="datos['+i+']"></textarea>'+
+							 '<label>Querys</label><input type="number" name="accion['+i+']"><br>'+
+							 '<textarea class="class="form-control" rows="10"" name="query['+i+']"></textarea>'+
 		                     '</div>'
 			                )	
 		}
