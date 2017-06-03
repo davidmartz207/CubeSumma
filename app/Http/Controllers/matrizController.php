@@ -12,8 +12,8 @@ class matrizController extends Controller
     {
 
     }
-
-
+    //metodo: validar
+    //retorna: Redirección,array
     public function validar()
     {
         $tareas    = Input::get('tareas');
@@ -33,7 +33,9 @@ class matrizController extends Controller
         
     }
 
-
+    //metodo:  inicializar
+    //recibe:  dimension: tamaño de la matriz
+    //retorna: array
     public function inicializar($dimension){
         $matriz=[];
         for ($i=1; $i <=$dimension ; $i++) { 
@@ -46,7 +48,12 @@ class matrizController extends Controller
          return $matriz;
     }
 
-
+    //metodo:  ejecutar
+    //recibe:  matriz:    Matriz de datos inicializada
+    //         query:     Elemento ubicado en el campo script del form
+    //         dimension: Tamaño de la matriz
+    //         accion:    Numero de tareas
+    //retorna: array, string
     public function ejecutar($matriz , $query, $dimension, $accion){
         $array = explode("\n",  $query);
         $valido=0;
@@ -84,7 +91,11 @@ class matrizController extends Controller
 
         return $resultado;
     }
-
+    //metodo:  ejecutar
+    //recibe:  matriz:    Matriz de datos 
+    //         query:     Elemento ubicado en el campo script del form
+    //         dimension: Tamaño de la matriz
+    //retorna: array, string
     public function actualiza($matriz , $array, $dimension){
 
         $operacion = explode(" ",  $array);
@@ -118,7 +129,12 @@ class matrizController extends Controller
         return $matriz;
     }
 
-
+    //metodo:  ejecutar
+    //recibe:  matriz:    Matriz de datos inicializada
+    //         query:     Elemento ubicado en el campo script del form
+    //         dimension: Tamaño de la matriz
+    //         accion:    Numero de tareas
+    //retorna: integer, string
     public function sumar($matriz , $array,$dimension){
         $operacion = explode(" ",$array);
         $x1=(integer)$operacion[1];$x2=(integer)$operacion[4];
