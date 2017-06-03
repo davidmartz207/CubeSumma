@@ -41,3 +41,7 @@ Descargar o clonar el repositorio.
 1. Ejecutar via cónsola el comando "php artisan serve" que ejecutará el servidor de desarrollo.
 1. Ingresar al navegador http://localhost:8000/ que lo ubicará en la vista de inicio.
 
+##**Refactoring**:
+En la raíz del proyecto estan las respuestas al code Refactoring Challenge entre los archivos
+- coderefactoring.php.
+- DetallesCodeRefactoring.php.
