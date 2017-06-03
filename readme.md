@@ -1,27 +1,43 @@
-# Laravel PHP Framework
+##**Descripcion**:
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Para el desarrollo, se utiliza la estructura del Framework Laravel v: 5.3 en la cual, se realizaron 2 vistas, una perteneciente al formulario de recepción de datos, y otra para los resultados, utilizando el sistema de rutas para establecer como pantalla inicial la vista de formularios y 1 controlador, el mismo contiene una clase con diferentes métodos que se describen a continuación:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Ubicado en: app/Http/Controllers/matrizController Clase MatrizController:
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+- validar():  Realiza la operación general, recoge información por método post del formulario y redirecciona con los resultados.
 
-## Official Documentation
+- inicializar(): Inicializa en 0 cada uno de los campos de una matriz.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+- ejecutar(): Valida el formato general de los scripts suministrados, determina el tipo de script y lo envía a otro método para su solución.
 
-## Contributing
+- actualiza(): Valida y ejecuta los querys del script suministrado de tipo UPDATE.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+- sumar(): Valida y ejecuta los querys del script suministrado de tipo query.
 
-## Security Vulnerabilities
+Los resultados se guardan en un array que es recibido por el método validar y enviado en la redirección hacia la vista "resultados".
+ 
+##**Pruebas**:
+Se puede utilizar como prueba el mismo ejemplo que se presenta en la página:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+	Tareas:    2
+    Dimension: 4  Accion: 5
+    Query:    UPDATE 2 2 2 4
+              QUERY 1 1 1 3 3 3
+              UPDATE 1 1 1 23
+              QUERY 2 2 2 4 4 4
+              QUERY 1 1 1 3 3 3
+    Dimension  2  Accion 4
+    query     UPDATE 2 2 2 1
+              QUERY 1 1 1 1 1 1
+              QUERY 1 1 1 2 2 2
+              QUERY 2 2 2 2 2 2
 
-## License
+Y el resultado: 4 4 27 para la primera tarea | 0 1 1 para la segunda tarea
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+##**Instalación**:
+
+Descargar o clonar el repositorio.
+1. Ingresar a la carpeta creada via cónsola en este caso CubeSumma y ejecutar composer install para descargar dependencias.
+1. Ejecutar via cónsola el comando "php artisan serve" que ejecutará el servidor de desarrollo.
+1. Ingresar al navegador http://localhost:8000/ que lo ubicará en la vista de inicio.
+
